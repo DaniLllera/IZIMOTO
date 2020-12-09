@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/splashScreamFragment">
+    <fragment
+        android:id="@+id/splashScreamFragment"
+        android:name="com.example.proyectom07_izimoto.SplashScreamFragment"
+        android:label="fragment_splash_scream"
+        tools:layout="@layout/fragment_splash_scream" >
+        <action
+            android:id="@+id/action_splashScreamFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.proyectom07_izimoto.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registroFragment"
+            app:destination="@id/registroFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_paginaPrincipalFragment"
+            app:destination="@id/paginaPrincipalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registroFragment"
+        android:name="com.example.proyectom07_izimoto.RegistroFragment"
+        android:label="fragment_registro"
+        tools:layout="@layout/fragment_registro" >
+        <action
+            android:id="@+id/action_registroFragment_to_paginaPrincipalFragment"
+            app:destination="@id/paginaPrincipalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paginaPrincipalFragment"
+        android:name="com.example.proyectom07_izimoto.PaginaPrincipalFragment"
+        android:label="fragment_pagina_principal"
+        tools:layout="@layout/fragment_pagina_principal" />
+
+
+</navigation>
