@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 // Top-level destinations:
-                R.id.paginaPrincipalFragment
+                R.id.paginaPrincipalFragment, R.id.permisoMotoFragment
         )
                 .setOpenableLayout(binding.drawerLayout)
                 .build();
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 }else if( destination.getId()==R.id.splashScreamFragment){
                     binding.toolbar.setVisibility(View.GONE);
 
-                }
+                } 
                 else {
                     binding.toolbar.setVisibility(View.VISIBLE);
                 }

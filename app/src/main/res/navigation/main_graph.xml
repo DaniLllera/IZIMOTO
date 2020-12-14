@@ -37,8 +37,17 @@
     <fragment
         android:id="@+id/paginaPrincipalFragment"
         android:name="com.example.proyectom07_izimoto.PaginaPrincipalFragment"
-        android:label="fragment_pagina_principal"
-        tools:layout="@layout/fragment_pagina_principal" />
+        android:label="Seleccione el Permiso"
+        tools:layout="@layout/fragment_pagina_principal" >
+        <action
+            android:id="@+id/action_paginaPrincipalFragment_to_permisoMotoFragment"
+            app:destination="@id/permisoMotoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/permisoMotoFragment"
+        android:name="com.example.proyectom07_izimoto.PermisoMotoFragment"
+        android:label="Permiso A1/A2"
+        tools:layout="@layout/fragment_permiso_moto" />
 
 
 </navigation>

@@ -1,26 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+
+        android:id="@+id/grupo">
     <item
         android:id="@+id/loginFragment"
         android:icon="@drawable/resultado"
         android:iconTint="@color/white"
         android:title="Tus Resultados" />
 
+    </group>
 
-   <item
-       android:id="@+id/paginaPrincipalFragment"
-       android:icon="@drawable/ic_baseline_analytics_24"
-       android:title="Solicitar Fecha de Examen" />
+    <group
 
+        android:id="@+id/grupo2">
     <item
+        android:id="@+id/loginFragment2"
+        android:icon="@drawable/examen"
+        android:iconTint="@color/white"
+        android:title="Solicitar Fecha del Examen" />
+    </group>
 
-        android:icon="@android:drawable/ic_menu_directions"
+    <group
+
+        android:id="@+id/grupo3">
+    <item
+        android:id="@+id/loginFragment3"
+        android:icon="@drawable/bombilla"
+        android:iconTint="@color/white"
         android:title="Info de la App" />
+    </group>
+    <group
 
+        android:id="@+id/grupo4">
     <item
+        android:id="@+id/loginFragment4"
+        android:icon="@drawable/salir"
+        android:iconTint="@color/white"
+        android:title="Salir de la sesion" />
 
-        android:icon="@android:drawable/ic_menu_directions"
-        android:title="Salir de la Sesion" />
+    </group>
 
 
 </menu>
