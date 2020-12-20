@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
-    app:startDestination="@id/splashScreamFragment">
+    app:startDestination="@id/paginaPrincipalFragment">
     <fragment
         android:id="@+id/splashScreamFragment"
         android:name="com.example.proyectom07_izimoto.SplashScreamFragment"
@@ -47,7 +47,40 @@
         android:id="@+id/permisoMotoFragment"
         android:name="com.example.proyectom07_izimoto.PermisoMotoFragment"
         android:label="Permiso A1/A2"
-        tools:layout="@layout/fragment_permiso_moto" />
+        tools:layout="@layout/fragment_permiso_moto" >
+        <action
+            android:id="@+id/action_permisoMotoFragment_to_testTemasFragment"
+            app:destination="@id/testTemasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cerrarSesionFragment"
+        android:name="com.example.proyectom07_izimoto.CerrarSesionFragment"
+        android:label="fragment_cerrar_sesion"
+        tools:layout="@layout/fragment_cerrar_sesion" >
+        <action
+            android:id="@+id/action_cerrarSesionFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoAppFragment"
+        android:name="com.example.proyectom07_izimoto.InfoAppFragment"
+        android:label="Información de la app"
+        tools:layout="@layout/fragment_info_app" />
+    <fragment
+        android:id="@+id/testTemasFragment"
+        android:name="com.example.proyectom07_izimoto.TestTemasFragment"
+        android:label="fragment_test_temas"
+        tools:layout="@layout/fragment_test_temas" />
+    <fragment
+        android:id="@+id/resultadosFragment"
+        android:name="com.example.proyectom07_izimoto.ResultadosFragment"
+        android:label="Tus Resultados"
+        tools:layout="@layout/fragment_resultados" />
+    <fragment
+        android:id="@+id/fechaExamenFragment"
+        android:name="com.example.proyectom07_izimoto.FechaExamenFragment"
+        android:label="fragment_fecha_examen"
+        tools:layout="@layout/fragment_fecha_examen" />
 
 
 </navigation>
