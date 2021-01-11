@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TestTemasFragment"
+    tools:context=".TestTemas3Fragment"
     android:background="#1F347F">
 
 
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="25dp"
         android:layout_marginTop="76dp"
-        android:src="@drawable/logomoto"
+        android:src="@drawable/logocoche"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toStartOf="parent"
@@ -147,4 +147,6 @@
             tools:ignore="MissingConstraints" />
 
     </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -42,6 +42,12 @@
         <action
             android:id="@+id/action_paginaPrincipalFragment_to_permisoMotoFragment"
             app:destination="@id/permisoMotoFragment" />
+        <action
+            android:id="@+id/action_paginaPrincipalFragment_to_permisoCamionFragment"
+            app:destination="@id/permisoCamionFragment" />
+        <action
+            android:id="@+id/action_paginaPrincipalFragment_to_permisoCocheFragment"
+            app:destination="@id/permisoCocheFragment" />
     </fragment>
     <fragment
         android:id="@+id/permisoMotoFragment"
@@ -69,8 +75,12 @@
     <fragment
         android:id="@+id/testTemasFragment"
         android:name="com.example.proyectom07_izimoto.TestTemasFragment"
-        android:label="fragment_test_temas"
-        tools:layout="@layout/fragment_test_temas" />
+        android:label="Test por temas Motos"
+        tools:layout="@layout/fragment_test_temas" >
+        <action
+            android:id="@+id/action_testTemasFragment_to_testSenalizacionFragment"
+            app:destination="@id/testSenalizacionFragment" />
+    </fragment>
     <fragment
         android:id="@+id/resultadosFragment"
         android:name="com.example.proyectom07_izimoto.ResultadosFragment"
@@ -79,8 +89,67 @@
     <fragment
         android:id="@+id/fechaExamenFragment"
         android:name="com.example.proyectom07_izimoto.FechaExamenFragment"
-        android:label="fragment_fecha_examen"
+        android:label="Fechas de Examen"
         tools:layout="@layout/fragment_fecha_examen" />
+    <fragment
+        android:id="@+id/testTemas2Fragment2"
+        android:name="com.example.proyectom07_izimoto.TestTemas2Fragment"
+        android:label="Test por temas Camión"
+        tools:layout="@layout/fragment_test_temas2" >
+        <action
+            android:id="@+id/action_testTemas2Fragment2_to_testSenalizacionFragment"
+            app:destination="@id/testSenalizacionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/permisoCamionFragment"
+        android:name="com.example.proyectom07_izimoto.PermisoCamionFragment"
+        android:label="Permiso C1/C"
+        tools:layout="@layout/fragment_permiso_camion" >
+        <action
+            android:id="@+id/action_permisoCamionFragment_to_testTemas2Fragment2"
+            app:destination="@id/testTemas2Fragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/permisoCocheFragment"
+        android:name="com.example.proyectom07_izimoto.PermisoCocheFragment"
+        android:label="Permiso B"
+        tools:layout="@layout/fragment_permiso_coche" >
+        <action
+            android:id="@+id/action_permisoCocheFragment_to_testTemas3Fragment"
+            app:destination="@id/testTemas3Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/testTemas3Fragment"
+        android:name="com.example.proyectom07_izimoto.TestTemas3Fragment"
+        android:label="Test por temas Camión"
+        tools:layout="@layout/fragment_test_temas3" >
+        <action
+            android:id="@+id/action_testTemas3Fragment_to_testSenalizacionFragment"
+            app:destination="@id/testSenalizacionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/testSenalizacionFragment"
+        android:name="com.example.proyectom07_izimoto.TestSenalizacionFragment"
+        android:label="Señalización"
+        tools:layout="@layout/fragment_test_senalizacion" >
+        <action
+            android:id="@+id/action_testSenalizacionFragment_to_testOficialesDGTFragment"
+            app:destination="@id/testOficialesDGTFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/testOficialesDGTFragment"
+        android:name="com.example.proyectom07_izimoto.TestOficialesDGTFragment"
+        android:label="Oficiales DGT"
+        tools:layout="@layout/fragment_test_oficiales_d_g_t" >
+        <action
+            android:id="@+id/action_testOficialesDGTFragment_to_testOficialesDGTTiempoFragment"
+            app:destination="@id/testOficialesDGTTiempoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/testOficialesDGTTiempoFragment"
+        android:name="com.example.proyectom07_izimoto.TestOficialesDGTTiempoFragment"
+        android:label="Test Oficiales Con Tiempo"
+        tools:layout="@layout/fragment_test_oficiales_d_g_t_tiempo" />
 
 
 </navigation>

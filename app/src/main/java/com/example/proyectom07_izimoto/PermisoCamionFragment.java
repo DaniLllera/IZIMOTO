@@ -12,20 +12,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.proyectom07_izimoto.databinding.FragmentLoginBinding;
-import com.example.proyectom07_izimoto.databinding.FragmentPaginaPrincipalBinding;
-import com.example.proyectom07_izimoto.databinding.FragmentPermisoMotoBinding;
+import com.example.proyectom07_izimoto.databinding.FragmentPermisoCamionBinding;
 
 
-public class PermisoMotoFragment extends Fragment {
+public class PermisoCamionFragment extends Fragment {
 
-    FragmentPermisoMotoBinding binding;
+
+    FragmentPermisoCamionBinding binding;
     private NavController navController;
-
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return (binding = FragmentPermisoMotoBinding.inflate(inflater, container, false)).getRoot();
+        return (binding = FragmentPermisoCamionBinding.inflate(inflater, container, false)).getRoot();
     }
 
     @Override
@@ -33,30 +31,32 @@ public class PermisoMotoFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         navController = Navigation.findNavController(view);
 
+
         binding.senales.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_permisoMotoFragment_to_testTemasFragment);
+                navController.navigate(R.id.action_permisoCamionFragment_to_testTemas2Fragment2);
             }
         });
 
         binding.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_permisoMotoFragment_to_testTemasFragment);
+                navController.navigate(R.id.action_permisoCamionFragment_to_testTemas2Fragment2);
             }
         });
 
         binding.senales2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_permisoMotoFragment_to_testTemasFragment);
+                navController.navigate(R.id.action_permisoCamionFragment_to_testTemas2Fragment2);
             }
         });
+
         binding.linearLayout24.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_permisoMotoFragment_to_testTemasFragment);
+                navController.navigate(R.id.action_permisoCamionFragment_to_testTemas2Fragment2);
             }
         });
     }

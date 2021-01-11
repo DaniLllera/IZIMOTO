@@ -36,5 +36,19 @@ public class PaginaPrincipalFragment extends Fragment {
                 navController.navigate(R.id.action_paginaPrincipalFragment_to_permisoMotoFragment);
             }
         });
+
+        binding.imageView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navController.navigate(R.id.action_paginaPrincipalFragment_to_permisoCamionFragment);
+            }
+        });
+
+        binding.imageView4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navController.navigate(R.id.action_paginaPrincipalFragment_to_permisoCocheFragment);
+            }
+        });
     }
 }

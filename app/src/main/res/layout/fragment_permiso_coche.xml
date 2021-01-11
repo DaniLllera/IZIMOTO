@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PermisoMotoFragment"
+    tools:context=".PermisoCocheFragment"
     android:background="#1F347F"
     android:scrollbarSize="19dp"
     android:scrollbars="none">
+
 
 
     <ImageView
@@ -45,7 +46,7 @@
             android:text="Test por Temas"
             android:textColor="@color/white"
             android:textSize="18sp"
-           android:textAlignment="center" />
+            android:textAlignment="center" />
     </LinearLayout>
 
     <LinearLayout
@@ -136,5 +137,7 @@
             android:textSize="18sp" />
 
     </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

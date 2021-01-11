@@ -12,19 +12,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.proyectom07_izimoto.databinding.FragmentPermisoMotoBinding;
-import com.example.proyectom07_izimoto.databinding.FragmentTestTemasBinding;
+import com.example.proyectom07_izimoto.databinding.FragmentTestTemas2Binding;
+import com.example.proyectom07_izimoto.databinding.FragmentTestTemas3Binding;
 
 
-public class TestTemasFragment extends Fragment {
+public class TestTemas2Fragment extends Fragment {
 
-    FragmentTestTemasBinding binding;
+    FragmentTestTemas2Binding binding;
     private NavController navController;
 
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return (binding = FragmentTestTemasBinding.inflate(inflater, container, false)).getRoot();
+        return (binding = FragmentTestTemas2Binding.inflate(inflater, container, false)).getRoot();
     }
 
     @Override
@@ -36,21 +36,21 @@ public class TestTemasFragment extends Fragment {
         binding.senales.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_testTemasFragment_to_testSenalizacionFragment);
+                navController.navigate(R.id.action_testTemas2Fragment2_to_testSenalizacionFragment);
             }
         });
 
         binding.senales2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_testTemasFragment_to_testSenalizacionFragment);
+                navController.navigate(R.id.action_testTemas2Fragment2_to_testSenalizacionFragment);
             }
         });
 
         binding.senales3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_testTemasFragment_to_testSenalizacionFragment);
+                navController.navigate(R.id.action_testTemas2Fragment2_to_testSenalizacionFragment);
             }
         });
     }

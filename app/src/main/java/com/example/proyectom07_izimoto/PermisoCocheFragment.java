@@ -12,20 +12,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.proyectom07_izimoto.databinding.FragmentLoginBinding;
-import com.example.proyectom07_izimoto.databinding.FragmentPaginaPrincipalBinding;
-import com.example.proyectom07_izimoto.databinding.FragmentPermisoMotoBinding;
+import com.example.proyectom07_izimoto.databinding.FragmentPermisoCocheBinding;
 
 
-public class PermisoMotoFragment extends Fragment {
+public class PermisoCocheFragment extends Fragment {
 
-    FragmentPermisoMotoBinding binding;
+
+    FragmentPermisoCocheBinding binding;
     private NavController navController;
-
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return (binding = FragmentPermisoMotoBinding.inflate(inflater, container, false)).getRoot();
+        return (binding = FragmentPermisoCocheBinding.inflate(inflater, container, false)).getRoot();
     }
 
     @Override
@@ -33,30 +31,32 @@ public class PermisoMotoFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         navController = Navigation.findNavController(view);
 
+
         binding.senales.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_permisoMotoFragment_to_testTemasFragment);
-            }
-        });
-
-        binding.linearLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                navController.navigate(R.id.action_permisoMotoFragment_to_testTemasFragment);
+                navController.navigate(R.id.action_permisoCocheFragment_to_testTemas3Fragment);
             }
         });
 
         binding.senales2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_permisoMotoFragment_to_testTemasFragment);
+                navController.navigate(R.id.action_permisoCocheFragment_to_testTemas3Fragment);
             }
         });
+
+        binding.linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navController.navigate(R.id.action_permisoCocheFragment_to_testTemas3Fragment);
+            }
+        });
+
         binding.linearLayout24.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_permisoMotoFragment_to_testTemasFragment);
+                navController.navigate(R.id.action_permisoCocheFragment_to_testTemas3Fragment);
             }
         });
     }
