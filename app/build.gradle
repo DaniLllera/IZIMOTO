@@ -29,6 +29,7 @@ android {
     buildFeatures {
         viewBinding true
     }
+
 }
 
 dependencies {
@@ -46,4 +47,11 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     annotationProcessor 'androidx.room:room-compiler:2.2.5'
+    implementation 'com.github.psinetron:slycalendarview:0.0.9'
+
+}
+repositories {
+    maven {
+        url "https://jitpack.io"
+    }
 }

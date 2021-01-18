@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     tools:context=".FechaExamenFragment"
     android:background="#1F347F">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:text="Calendario" />
 
+    <ru.slybeaver.slycalendarview.SlyCalendarView
+        android:id="@+id/slyCalendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:backgroundColor="#000000"
+        app:headerColor="#ff0000"
+        app:firstMonday="true"
+        app:textColor="#00ff00"
+        app:selectedColor="#0000ff"
+        />
 </FrameLayout>

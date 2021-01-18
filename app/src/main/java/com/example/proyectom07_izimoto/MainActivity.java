@@ -60,7 +60,10 @@ public class MainActivity extends AppCompatActivity {
                 }else if( destination.getId()==R.id.splashScreamFragment){
                     binding.toolbar.setVisibility(View.GONE);
 
-                } 
+                }else if( destination.getId()==R.id.registroProfessorFragment){
+                    binding.toolbar.setVisibility(View.GONE);
+
+                }
                 else {
                     binding.toolbar.setVisibility(View.VISIBLE);
                 }

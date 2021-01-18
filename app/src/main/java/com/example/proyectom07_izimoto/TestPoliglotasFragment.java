@@ -12,20 +12,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.proyectom07_izimoto.databinding.FragmentTestOficialesDGTBinding;
 import com.example.proyectom07_izimoto.databinding.FragmentTestOficialesDGTTiempoBinding;
+import com.example.proyectom07_izimoto.databinding.FragmentTestPoliglotasBinding;
 
 
+public class TestPoliglotasFragment extends Fragment {
 
-public class TestOficialesDGTTiempoFragment extends Fragment {
-
-    FragmentTestOficialesDGTTiempoBinding binding;
+    FragmentTestPoliglotasBinding binding;
     private NavController navController;
 
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return (binding = FragmentTestOficialesDGTTiempoBinding.inflate(inflater, container, false)).getRoot();
+        return (binding = FragmentTestPoliglotasBinding.inflate(inflater, container, false)).getRoot();
     }
 
 
@@ -38,7 +37,7 @@ public class TestOficialesDGTTiempoFragment extends Fragment {
         binding.button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_testOficialesDGTTiempoFragment_to_testPoliglotasFragment);
+                navController.navigate(R.id.action_testPoliglotasFragment_to_resultadosDelTestFragment);
             }
         });
     }

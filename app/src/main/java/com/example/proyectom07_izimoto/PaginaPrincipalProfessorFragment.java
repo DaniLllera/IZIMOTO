@@ -12,34 +12,30 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.proyectom07_izimoto.databinding.FragmentTestOficialesDGTBinding;
-import com.example.proyectom07_izimoto.databinding.FragmentTestOficialesDGTTiempoBinding;
+import com.example.proyectom07_izimoto.databinding.FragmentPaginaPrincipalProfessorBinding;
+import com.example.proyectom07_izimoto.databinding.FragmentRegistroProfessorBinding;
 
+public class PaginaPrincipalProfessorFragment extends Fragment {
 
-
-public class TestOficialesDGTTiempoFragment extends Fragment {
-
-    FragmentTestOficialesDGTTiempoBinding binding;
+    FragmentPaginaPrincipalProfessorBinding binding;
     private NavController navController;
-
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return (binding = FragmentTestOficialesDGTTiempoBinding.inflate(inflater, container, false)).getRoot();
+        return (binding = FragmentPaginaPrincipalProfessorBinding.inflate(inflater, container, false)).getRoot();
     }
 
-
-    @Override
+   /* @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         navController = Navigation.findNavController(view);
 
 
-        binding.button4.setOnClickListener(new View.OnClickListener() {
+        binding.button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_testOficialesDGTTiempoFragment_to_testPoliglotasFragment);
+                navController.navigate(R.id.action_registroProfessorFragment_to_paginaPrincipalProfessorFragment);
             }
         });
-    }
+    }*/
 }

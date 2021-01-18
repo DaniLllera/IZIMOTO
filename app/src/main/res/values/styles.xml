@@ -11,4 +11,12 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
+    <attr name="backgroundColor" format="color"/>
+    <attr name="headerColor" format="color"/>
+    <attr name="headerTextColor" format="color"/>
+    <attr name="textColor" format="color"/>
+    <attr name="selectedColor" format="color"/>
+    <attr name="selectedTextColor" format="color"/>
+    <attr name="firstMonday" format="boolean"/>
 </resources>
