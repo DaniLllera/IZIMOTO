@@ -2,55 +2,48 @@ package com.example.proyectom07_izimoto;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Locale;
-
-
-import ru.slybeaver.slycalendarview.SlyCalendarDialog;
-
+import com.example.proyectom07_izimoto.databinding.FragmentFechaExamenBinding;
 
 
 public class FechaExamenFragment extends Fragment{
-/*
+
+    private FragmentFechaExamenBinding binding;
+    private AppViewModel appViewModel;
+    private NavController navController;
+
     @Override
-    public void onCancelled() {
-        //Nothing
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return (binding = FragmentFechaExamenBinding.inflate(inflater, container, false)).getRoot();
     }
 
     @Override
-    public void onDataSelected(Calendar firstDate, Calendar secondDate, int hours, int minutes) {
-        if (firstDate != null) {
-            if (secondDate == null) {
-                firstDate.set(Calendar.HOUR_OF_DAY, hours);
-                firstDate.set(Calendar.MINUTE, minutes);
-                Toast.makeText(
-                        this,
-                        new SimpleDateFormat(getString(R.string.timeFormat), Locale.getDefault()).format(firstDate.getTime()),
-                        Toast.LENGTH_LONG
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
-                ).show();
-            } else {
-                Toast.makeText(
-                        this,
-                        getString(
-                                R.string.period,
-                                new SimpleDateFormat(getString(R.string.dateFormat), Locale.getDefault()).format(firstDate.getTime()),
-                                new SimpleDateFormat(getString(R.string.timeFormat), Locale.getDefault()).format(secondDate.getTime())
-                        ),
-                        Toast.LENGTH_LONG
+        navController = Navigation.findNavController(view);
+        appViewModel = new ViewModelProvider(requireActivity()).get(AppViewModel.class);
 
-                ).show();
-            }
-        }
-    }*/
 
+        binding.calendarView.setDateFormat("yyyy MMM");
+        binding.calendarView.setPreventPreviousDate(true);
+        binding.calendarView.setErrToastMessage("Selecciona una fecha valida");
+        binding.calendarView.buildCalendar();
+
+        binding.calendarView.setOnDaySelectedListener((startDay, endDay) -> {
+            appViewModel.startday=startDay;
+            navController.navigate(R.id.action_fechaExamenFragment_to_confirmarFechaFragment);
+
+        });
+    }
 }

@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.proyectom07_izimoto.databinding.FragmentPaginaPrincipalProfessorBinding;
-import com.example.proyectom07_izimoto.databinding.FragmentRegistroProfessorBinding;
 
 public class PaginaPrincipalProfessorFragment extends Fragment {
 
@@ -25,17 +24,17 @@ public class PaginaPrincipalProfessorFragment extends Fragment {
         return (binding = FragmentPaginaPrincipalProfessorBinding.inflate(inflater, container, false)).getRoot();
     }
 
-   /* @Override
+    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         navController = Navigation.findNavController(view);
 
 
-        binding.button2.setOnClickListener(new View.OnClickListener() {
+        binding.usuarios.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_registroProfessorFragment_to_paginaPrincipalProfessorFragment);
+                navController.navigate(R.id.action_paginaPrincipalProfessorFragment_to_administrarUsuariosFragment);
             }
         });
-    }*/
+    }
 }

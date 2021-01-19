@@ -21,7 +21,7 @@ public class RegistroFragment extends Fragment {
 
     private NavController navController;
     FragmentRegistroBinding binding;
-    private AutenticacionViewModel autenticacionViewModel;
+    private AppViewModel appViewModel;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -34,10 +34,10 @@ public class RegistroFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        autenticacionViewModel = new ViewModelProvider(requireActivity()).get(AutenticacionViewModel.class);
+        appViewModel = new ViewModelProvider(requireActivity()).get(AppViewModel.class);
         navController = Navigation.findNavController(view);
 
-        autenticacionViewModel.iniciarRegistro();
+        appViewModel.iniciarRegistro();
 
         binding.button2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,29 +46,23 @@ public class RegistroFragment extends Fragment {
                 String password = binding.password.getText().toString();
                 String biografia = binding.editTextmail.getText().toString();
 
-                autenticacionViewModel.crearCuentaEIniciarSesion(username, password, biografia);
+                appViewModel.crearCuentaEIniciarSesion(username, password, biografia);
             }
         });
 
-        autenticacionViewModel.estadoDelRegistro.observe(getViewLifecycleOwner(), new Observer<AutenticacionViewModel.EstadoDelRegistro>() {
-            @Override
-            public void onChanged(AutenticacionViewModel.EstadoDelRegistro estadoDelRegistro) {
-                switch (estadoDelRegistro){
-                    case NOMBRE_NO_DISPONIBLE:
-                        Toast.makeText(getContext(), "NOMBRE DE USUARIO NO DISPONIBLE", Toast.LENGTH_SHORT).show();
-                        break;
-                }
+        appViewModel.estadoDelRegistro.observe(getViewLifecycleOwner(), estadoDelRegistro -> {
+            switch (estadoDelRegistro){
+                case NOMBRE_NO_DISPONIBLE:
+                    Toast.makeText(getContext(), "NOMBRE DE USUARIO NO DISPONIBLE", Toast.LENGTH_SHORT).show();
+                    break;
             }
         });
 
-        autenticacionViewModel.estadoDeLaAutenticacion.observe(getViewLifecycleOwner(), new Observer<AutenticacionViewModel.EstadoDeLaAutenticacion>() {
-            @Override
-            public void onChanged(AutenticacionViewModel.EstadoDeLaAutenticacion estadoDeLaAutenticacion) {
-                switch (estadoDeLaAutenticacion){
-                    case AUTENTICADO:
-                        navController.navigate(R.id.action_registroFragment_to_paginaPrincipalFragment);
-                        break;
-                }
+        appViewModel.estadoDeLaAutenticacion.observe(getViewLifecycleOwner(), estadoDeLaAutenticacion -> {
+            switch (estadoDeLaAutenticacion){
+                case AUTENTICADO:
+                    navController.navigate(R.id.action_registroFragment_to_paginaPrincipalFragment);
+                    break;
             }
         });
 

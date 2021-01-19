@@ -10,7 +10,8 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 @Database(entities = {Usuario.class}, version = 2, exportSchema = false)
-public abstract class AppBaseDeDatos extends RoomDatabase {
+public abstract class
+AppBaseDeDatos extends RoomDatabase {
 
     public abstract AppDao obtenerDao();
 

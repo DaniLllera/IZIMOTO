@@ -19,7 +19,7 @@ import com.example.proyectom07_izimoto.databinding.FragmentCerrarSesionBinding;
 public class CerrarSesionFragment extends Fragment {
 
 
-    private AutenticacionViewModel autenticacionViewModel;
+    private AppViewModel appViewModel;
     private NavController navController;
     private FragmentCerrarSesionBinding binding;
 
@@ -32,10 +32,10 @@ public class CerrarSesionFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        autenticacionViewModel = new ViewModelProvider(requireActivity()).get(AutenticacionViewModel.class);
+        appViewModel = new ViewModelProvider(requireActivity()).get(AppViewModel.class);
         navController = Navigation.findNavController(view);
 
-        autenticacionViewModel.cerrarSesion();
+        appViewModel.cerrarSesion();
 
         navController.navigate(R.id.action_cerrarSesionFragment_to_loginFragment);
     }

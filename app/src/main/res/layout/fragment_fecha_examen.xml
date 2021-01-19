@@ -9,14 +9,9 @@
     android:background="#1F347F">
 
 
-    <ru.slybeaver.slycalendarview.SlyCalendarView
-        android:id="@+id/slyCalendarView"
+    <pyxis.uzuki.live.sectioncalendarview.SectionCalendarView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:backgroundColor="#000000"
-        app:headerColor="#ff0000"
-        app:firstMonday="true"
-        app:textColor="#00ff00"
-        app:selectedColor="#0000ff"
-        />
+        android:layout_height="340dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/calendarView" />
 </FrameLayout>

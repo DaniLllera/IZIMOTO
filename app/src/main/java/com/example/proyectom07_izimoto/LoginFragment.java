@@ -19,7 +19,7 @@ import com.example.proyectom07_izimoto.databinding.FragmentLoginBinding;
 
 public class LoginFragment extends Fragment {
 
-    private AutenticacionViewModel autenticacionViewModel;
+    private AppViewModel appViewModel;
     private NavController navController;
     FragmentLoginBinding binding;
 
@@ -32,7 +32,7 @@ public class LoginFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        autenticacionViewModel = new ViewModelProvider(requireActivity()).get(AutenticacionViewModel.class);
+        appViewModel = new ViewModelProvider(requireActivity()).get(AppViewModel.class);
         navController = Navigation.findNavController(view);
 
         binding.button2.setOnClickListener(new View.OnClickListener() {
@@ -47,23 +47,29 @@ public class LoginFragment extends Fragment {
             public void onClick(View view) {
                 String usuario = binding.usuario.getText().toString();
                 String password = binding.password.getText().toString();
-               autenticacionViewModel.iniciarSesion(usuario,password);
+                appViewModel.iniciarSesion(usuario,password);
             }
         });
-//?¿
-        autenticacionViewModel.estadoDeLaAutenticacion.observe(getViewLifecycleOwner(), new Observer<AutenticacionViewModel.EstadoDeLaAutenticacion>() {
-            @Override
-            public void onChanged(AutenticacionViewModel.EstadoDeLaAutenticacion estadoDeLaAutenticacion) {
-                switch (estadoDeLaAutenticacion){
-                    case AUTENTICADO:
-                        navController.navigate(R.id.action_loginFragment_to_paginaPrincipalFragment);
-                        break;
 
-                    case AUTENTICACION_INVALIDA:
-                        Toast.makeText(getContext(), "CREDENCIALES NO VALIDAS", Toast.LENGTH_SHORT).show();
-                        break;
-                }
+        appViewModel.estadoDeLaAutenticacion.observe(getViewLifecycleOwner(), estadoDeLaAutenticacion -> {
+            switch (estadoDeLaAutenticacion){
+                case AUTENTICADO:
+                    navController.navigate(R.id.action_loginFragment_to_paginaPrincipalFragment);
+                    break;
+
+                case AUTENTICACION_INVALIDA:
+                    Toast.makeText(getContext(), "CREDENCIALES NO VALIDAS", Toast.LENGTH_SHORT).show();
+                    break;
             }
         });
+  binding.button.setOnClickListener(v -> {
+            if (binding.checkBox.isChecked()) {
+                navController.navigate(R.id.action_loginFragment_to_paginaPrincipalProfessorFragment2);
+            }else {
+                navController.navigate(R.id.action_loginFragment_to_paginaPrincipalFragment);
+            }
+        });
+
+
     }
 }

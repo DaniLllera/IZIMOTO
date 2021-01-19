@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
@@ -18,6 +19,7 @@ import java.util.concurrent.Executors;
 
 
 public class SplashScreamFragment extends Fragment {
+    private  AppViewModel appViewModel;
 
     Executor executor = Executors.newSingleThreadExecutor();
 
@@ -33,10 +35,10 @@ public class SplashScreamFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         navController = Navigation.findNavController(view);
+        appViewModel = new ViewModelProvider(requireActivity()).get(AppViewModel.class);
 
-        // esta variable deberia estar en un ViewModel
         MutableLiveData<Boolean> finishedLoading = new MutableLiveData<>();
-
+        appViewModel.cargados=true;
 
         finishedLoading.observe(getViewLifecycleOwner(), new Observer<Boolean>() {
             @Override
@@ -45,7 +47,6 @@ public class SplashScreamFragment extends Fragment {
             }
         });
 
-        // esto deberia estar en el Model y llamarlo a traves del ViewModel
         executor.execute(new Runnable() {
             @Override
             public void run() {

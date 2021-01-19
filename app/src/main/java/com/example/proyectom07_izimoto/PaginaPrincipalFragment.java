@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
@@ -18,6 +19,7 @@ import com.example.proyectom07_izimoto.databinding.FragmentPaginaPrincipalBindin
 public class PaginaPrincipalFragment extends Fragment {
 
     private NavController navController;
+    private  AppViewModel appViewModel;
     FragmentPaginaPrincipalBinding binding;
 
     @Override
@@ -29,26 +31,17 @@ public class PaginaPrincipalFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         navController = Navigation.findNavController(view);
+        appViewModel = new ViewModelProvider(requireActivity()).get(AppViewModel.class);
+        if (!appViewModel.cargados ) {
 
-        binding.imageView2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                navController.navigate(R.id.action_paginaPrincipalFragment_to_permisoMotoFragment);
-            }
-        });
+            navController.navigate(R.id.splashScreamFragment);
+        }else {
+            binding.imageView2.setOnClickListener(view1 -> navController.navigate(R.id.action_paginaPrincipalFragment_to_permisoMotoFragment));
 
-        binding.imageView3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                navController.navigate(R.id.action_paginaPrincipalFragment_to_permisoCamionFragment);
-            }
-        });
+            binding.imageView3.setOnClickListener(view12 -> navController.navigate(R.id.action_paginaPrincipalFragment_to_permisoCamionFragment));
 
-        binding.imageView4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                navController.navigate(R.id.action_paginaPrincipalFragment_to_permisoCocheFragment);
-            }
-        });
+            binding.imageView4.setOnClickListener(view13 -> navController.navigate(R.id.action_paginaPrincipalFragment_to_permisoCocheFragment));
+        }
+
     }
 }

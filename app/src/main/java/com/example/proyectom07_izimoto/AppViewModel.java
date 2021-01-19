@@ -4,13 +4,19 @@ import android.app.Application;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.proyectom07_izimoto.Model.AutenticacionManager;
 import com.example.proyectom07_izimoto.Model.Usuario;
 
+import java.util.List;
 
-public class AutenticacionViewModel extends AndroidViewModel{
+
+public class AppViewModel extends AndroidViewModel{
+    public String startday;
+    public boolean cargados = false;
+    UsuarioRepository usuarioRepository;
     enum EstadoDeLaAutenticacion {
         NO_AUTENTICADO,
         AUTENTICADO,
@@ -29,10 +35,19 @@ public class AutenticacionViewModel extends AndroidViewModel{
 
     AutenticacionManager autenticacionManager;
 
-    public AutenticacionViewModel(@NonNull Application application) {
+
+
+    public AppViewModel(@NonNull Application application) {
         super(application);
         autenticacionManager = new AutenticacionManager(application);
+        usuarioRepository = new UsuarioRepository();
     }
+
+
+    LiveData<List<Usuarios>> usuarios(){
+        return usuarioRepository.usuarios();
+    }
+
 
 
     void iniciarSesion(String username, String password){

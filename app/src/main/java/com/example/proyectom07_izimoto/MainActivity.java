@@ -54,13 +54,16 @@ public class MainActivity extends AppCompatActivity {
                 if(destination.getId()==R.id.loginFragment){
                     binding.toolbar.setVisibility(View.GONE);
 
-                }else if( destination.getId()==R.id.registroFragment){
-                    binding.toolbar.setVisibility(View.GONE);
-
                 }else if( destination.getId()==R.id.splashScreamFragment){
                     binding.toolbar.setVisibility(View.GONE);
 
                 }else if( destination.getId()==R.id.registroProfessorFragment){
+                    binding.toolbar.setVisibility(View.GONE);
+
+                }else if( destination.getId()==R.id.registroFragment){
+                    binding.toolbar.setVisibility(View.GONE);
+
+                }else if( destination.getId()==R.id.paginaPrincipalProfessorFragment){
                     binding.toolbar.setVisibility(View.GONE);
 
                 }
