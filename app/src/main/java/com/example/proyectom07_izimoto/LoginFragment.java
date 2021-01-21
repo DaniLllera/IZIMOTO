@@ -70,6 +70,14 @@ public class LoginFragment extends Fragment {
             }
         });
 
+        binding.button2.setOnClickListener(v -> {
+            if (binding.checkBox.isChecked()) {
+                navController.navigate(R.id.action_loginFragment_to_registroProfeFragment);
+            }else {
+                navController.navigate(R.id.action_loginFragment_to_registroFragment);
+            }
+        });
+
 
     }
 }

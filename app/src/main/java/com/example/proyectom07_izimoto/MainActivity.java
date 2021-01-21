@@ -57,13 +57,19 @@ public class MainActivity extends AppCompatActivity {
                 }else if( destination.getId()==R.id.splashScreamFragment){
                     binding.toolbar.setVisibility(View.GONE);
 
-                }else if( destination.getId()==R.id.registroProfessorFragment){
-                    binding.toolbar.setVisibility(View.GONE);
-
                 }else if( destination.getId()==R.id.registroFragment){
                     binding.toolbar.setVisibility(View.GONE);
 
                 }else if( destination.getId()==R.id.paginaPrincipalProfessorFragment){
+                    binding.toolbar.setVisibility(View.GONE);
+
+                }else if( destination.getId()==R.id.administrarUsuariosFragment){
+                    binding.toolbar.setVisibility(View.GONE);
+
+                }else if( destination.getId()==R.id.confirmarFechaFragment){
+                    binding.toolbar.setVisibility(View.GONE);
+
+                }else if( destination.getId()==R.id.habilitarFechaExamenFragment){
                     binding.toolbar.setVisibility(View.GONE);
 
                 }

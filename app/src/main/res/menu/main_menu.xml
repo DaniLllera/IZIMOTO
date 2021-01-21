@@ -32,16 +32,7 @@
         android:title="Info de la App" />
     </group>
 
-    <group
-
-        android:id="@+id/grupo5">
-        <item
-            android:id="@+id/registroProfessorFragment"
-            android:icon="@drawable/user"
-            android:iconTint="@color/white"
-            android:title="¿Eres Profesor?" />
-
-    </group>
+    
     <group
 
         android:id="@+id/grupo4">

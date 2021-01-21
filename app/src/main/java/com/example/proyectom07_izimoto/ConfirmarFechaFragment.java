@@ -42,7 +42,7 @@ public class ConfirmarFechaFragment extends DialogFragment {
         appViewModel = new ViewModelProvider(requireActivity()).get(AppViewModel.class);
         navController = Navigation.findNavController(requireParentFragment().requireView());
 
-        binding.seguro.setText("le parece bien el dia " + appViewModel.startday + "?");
+        binding.seguro.setText("Te parece bien el dia que as selecionado: \n\n " + appViewModel.startday + "?");
 
         binding.button5.setOnClickListener(v -> {
             binding.button5.setVisibility(View.GONE);

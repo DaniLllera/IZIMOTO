@@ -5,33 +5,126 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".InfoAppFragment"
-    android:background="#1F347F"
-    >
+    android:background="#1F347F">
 
-    <ScrollView
-        android:id="@+id/scrollView2"
+    <LinearLayout
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        android:orientation="vertical"
+        android:padding="8dp"
         tools:ignore="MissingConstraints">
 
-
-        <TextView
-            android:id="@+id/textView12"
+        <com.github.florent37.expansionpanel.viewgroup.ExpansionsViewGroupLinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Informacion Izimoto"
-            android:textSize="28sp"
-            android:gravity="center"
+            app:expansion_openOnlyOne="true"
+            android:orientation="vertical">
 
-            />
-    </ScrollView>
+            <!-- PANEL 1 -->
+
+            <com.github.florent37.expansionpanel.ExpansionHeader
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                app:expansion_layout="@id/expansionLayout1"
+                app:expansion_toggleOnClick="true">
+
+                <!-- HEADER -->
+                <TextView
+                    android:text="Información General"
+                    style="@style/tituloPanel"/>
+                <!-- HEADER INDICATOR -->
+
+
+            </com.github.florent37.expansionpanel.ExpansionHeader>
+
+            <View style="@style/separador"></View>
+
+            <com.github.florent37.expansionpanel.ExpansionLayout
+                android:id="@+id/expansionLayout1"
+                style="@style/contenidoPanel">
+
+                <TextView
+                    style="@style/contenidoTexto"
+                    android:text="@string/infogeneral"/>
+
+            </com.github.florent37.expansionpanel.ExpansionLayout>
+
+            <!-- PANEL 2 -->
+
+            <com.github.florent37.expansionpanel.ExpansionHeader
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                app:expansion_layout="@id/expansionLayout2"
+                app:expansion_toggleOnClick="true">
+
+                <!-- HEADER2 -->
+                <TextView
+                    android:text="Público Objetivo"
+                    style="@style/tituloPanel"/>
+                <!-- HEADER INDICATOR2 -->
+
+
+            </com.github.florent37.expansionpanel.ExpansionHeader>
+
+            <View style="@style/separador"></View>
+
+            <com.github.florent37.expansionpanel.ExpansionLayout
+                android:id="@+id/expansionLayout2"
+                style="@style/contenidoPanel">
+
+                <TextView
+                    style="@style/contenidoTexto"
+                    android:text="@string/publicoObjetivo"
+                />
+
+            </com.github.florent37.expansionpanel.ExpansionLayout>
+
+            <!-- PANEL 3 -->
+
+            <com.github.florent37.expansionpanel.ExpansionHeader
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                app:expansion_layout="@id/expansionLayout3"
+                app:expansion_toggleOnClick="true">
+
+                <!-- HEADER3 -->
+                <TextView
+                    android:text="Politica de Privacidad"
+                    style="@style/tituloPanel"/>
+                <!-- HEADER INDICATOR3 -->
+
+
+            </com.github.florent37.expansionpanel.ExpansionHeader>
+
+            <View style="@style/separador"></View>
+
+            <com.github.florent37.expansionpanel.ExpansionLayout
+                android:id="@+id/expansionLayout3"
+                style="@style/contenidoPanel">
+
+                <TextView
+                    style="@style/contenidoTexto"
+                    android:text="@string/politica"/>
+
+            </com.github.florent37.expansionpanel.ExpansionLayout>
+
+
+            <View style="@style/separador"></View>
+
+            <com.github.florent37.expansionpanel.ExpansionLayout
+                android:id="@+id/expansionLayout4"
+                style="@style/contenidoPanel">
+
+                <TextView
+                    style="@style/contenidoTexto"
+                    android:text="gmkjmkj"/>
+
+
+            </com.github.florent37.expansionpanel.ExpansionLayout>
+
+
+        </com.github.florent37.expansionpanel.viewgroup.ExpansionsViewGroupLinearLayout>
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

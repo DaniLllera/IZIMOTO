@@ -12,16 +12,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.proyectom07_izimoto.databinding.FragmentPaginaPrincipalProfessorBinding;
+import com.example.proyectom07_izimoto.databinding.FragmentPermisoCamionBinding;
+import com.example.proyectom07_izimoto.databinding.FragmentRegistroProfeBinding;
 
-public class PaginaPrincipalProfessorFragment extends Fragment {
 
-    FragmentPaginaPrincipalProfessorBinding binding;
+public class RegistroProfeFragment extends Fragment {
+
+    FragmentRegistroProfeBinding binding;
     private NavController navController;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return (binding = FragmentPaginaPrincipalProfessorBinding.inflate(inflater, container, false)).getRoot();
+        return (binding = FragmentRegistroProfeBinding.inflate(inflater, container, false)).getRoot();
     }
 
     @Override
@@ -30,18 +32,12 @@ public class PaginaPrincipalProfessorFragment extends Fragment {
         navController = Navigation.findNavController(view);
 
 
-        binding.usuarios.setOnClickListener(new View.OnClickListener() {
+        binding.button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_paginaPrincipalProfessorFragment_to_administrarUsuariosFragment);
+                navController.navigate(R.id.action_registroProfeFragment_to_paginaPrincipalProfessorFragment);
             }
         });
 
-        binding.imageView17.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                navController.navigate(R.id.action_paginaPrincipalProfessorFragment_to_habilitarFechaExamenFragment);
-            }
-        });
     }
 }
